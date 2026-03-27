@@ -1,41 +1,48 @@
 [![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=flat&logo=google-apps-script&logoColor=white)](https://developers.google.com/apps-script)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
-# 📊 Google Sheets → Multi-Platform Sync Tool
+# Google Sheets → Multi-Platform Contact Sync Tool
 
-A powerful Google Apps Script that transforms your Google Sheets into a contact sync hub for major marketing and analytics platforms. Upload contacts with one click, track upload status, and manage duplicate prevention - all without leaving Google Sheets.
-
-> ⚠️ **WORK IN PROGRESS**: This project is currently under active development. Platform integrations are being added progressively. Features and documentation may change. Use at your own discretion.
-
----
-
-## 📑 Table of Contents
-1. [Features](#-features)
-2. [Installation & Configuration](#-installation--configuration)
-3. [How to Use](#-how-to-use)
-4. [Tech Stack](#-tech-stack)
-5. [License](#-license)
-6. [Author](#-author)
+Turn your Google Sheet into a one-click contact uploader for marketing platforms like Braze, CRMs, and analytics tools. No backend. No dashboard hopping. Just upload directly from Sheets.
 
 ---
 
-## ✨ Features
+## What You Get
 
-![hippo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDIxMms2d2d1cXVjcG0ycmM2NmtqNWliYXBocWtzbXB5bWRlaXU2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rDq5czmtfL35tFADts/giphy.gif)
+[![Braze](https://img.shields.io/badge/Braze-FF5A5F?style=flat&logo=braze&logoColor=white)](https://www.braze.com/)
+[![MoEngage](https://img.shields.io/badge/MoEngage-5200FF?style=flat&logo=moengage&logoColor=white)](https://www.moengage.com/)
+[![Infobip](https://img.shields.io/badge/Infobip-1E90FF?style=flat&logo=infobip&logoColor=white)](https://www.infobip.com/)
+[![Gupshup](https://img.shields.io/badge/Gupshup-00A4E4?style=flat&logo=whatsapp&logoColor=white)](https://www.gupshup.io/)
+[![Mixpanel](https://img.shields.io/badge/Mixpanel-7856FF?style=flat&logo=mixpanel&logoColor=white)](https://mixpanel.com/)
+[![Segment](https://img.shields.io/badge/Segment-52BD95?style=flat&logo=segment&logoColor=white)](https://segment.com/)
 
-- **One-Click Uploads** - Sync contacts directly from Google Sheets custom menu
-- **Phone Normalization** - Automatic Indonesia phone number formatting (+62 E.164 format)
-- **Status Tracking** - Real-time upload status with timestamps
-- **Batch Processing** - Handle large datasets efficiently
-- **Connection Verification** - Pre-upload API connection testing
-- **Upload Statistics** - Visual progress bars and success/failure counts
+> ⚠️ **WORK IN PROGRESS**: This project is currently under active development. Platform integrations are being developed progressively. Features and documentation may change. Use at your own discretion.
+
+<table>
+<tr>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDIxMms2d2d1cXVjcG0ycmM2NmtqNWliYXBocWtzbXB5bWRlaXU2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rDq5czmtfL35tFADts/giphy.gif" width="100%" />
+<td width="60%">
+
+| Feature | Benefit |
+|---|---|
+| **One-Click Uploads** | Sync contacts directly from Google Sheets custom menu |
+| **Phone Normalization** | Automatic Indonesia phone number formatting (+62 E.164 format) |
+| **Status Tracking** | Real-time upload status with timestamps |
+| **Batch Processing** | Handle large datasets efficiently |
+| **Connection Verification** | Pre-upload API connection testing |
+| **Upload Statistics** | Visual progress bars and success/failure counts |
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🚀 Installation & Configuration
+## Quick Start
 
 ### Step 1: Set Up Google Sheets
 
-1. Create a new Google Sheet or open your existing contact database
+1. Open your existing contact database
 2. Ensure your sheet has the following columns:
    - `Name` or `Full Name`
    - `Phone` or `Mobile`
@@ -44,10 +51,9 @@ A powerful Google Apps Script that transforms your Google Sheets into a contact 
 ### Step 2: Add Apps Script
 
 1. In your Google Sheet, go to **Extensions** → **Apps Script**
-2. Delete any existing code in the editor
-3. Copy the entire script code and paste it into the editor
-4. Click **Save** (💾 icon)
-5. Name your project (e.g., "Contact Sync Tool")
+2. Copy the entire script code and paste it into the editor
+3. Click **Save** (💾 icon)
+4. Name your project (e.g., "Contact Sync Tool")
 
 ### Step 3: Configure API Credentials
 
@@ -75,67 +81,17 @@ Close and reopen your Google Sheet. You should see a new menu item called **"Con
 
 ---
 
-## 📖 How to Use
+## Next Steps
 
-### Upload Contacts to a Platform
-
-1. **Prepare Your Data**
-   - Ensure your contact data is properly formatted in the sheet
-   - Phone numbers can be in any format (will be auto-normalized for Indonesia)
-
-2. **Select Upload Platform**
-   - Click on **Contact Sync** menu in Google Sheets
-   - Choose your target platform (e.g., "Upload to Braze")
-
-3. **Confirm Upload**
-   - Review the confirmation dialog
-   - Click **OK** to proceed
-
-4. **Monitor Progress**
-   - Watch the status column update in real-time
-   - Check the summary dialog for upload statistics
-
-### Check Connection Status
-
-Before uploading, verify your API connections:
-
-1. Click **Contact Sync** → **Test Connection** → Select platform
-2. Review the connection status dialog
-
-### View Recent Contacts
-
-For platforms that support it:
-
-1. Click **Contact Sync** → **View Recent** → Select platform
-2. Review the recent contacts list
-
-### Status Indicators
-
-- **Uploaded** - Successfully synced to platform
-- **Already in Database** - Duplicate detected, skipped
-- **Failed** - Upload error (check logs)
-- **Pending** - Queued for upload
+Want to dive deeper? Read **[TECHNICAL_README.md](TECHNICAL_README.md)**
 
 ---
 
-## 🛠 Tech Stack
+## License
 
-- **Google Apps Script** - Automation and scripting
-- **UrlFetchApp** - HTTP API requests
-- **Batch API Processing** - Efficient bulk operations
-- **E.164 Phone Normalization** - International phone formatting
-- **Custom Menu UI** - Google Sheets integration
+Free to use for personal learning, testing, and demo purposes. Attribution appreciated. See LICENSE file for details.
 
 ---
 
-## 📝 License
-
-This project is built as a learning reference. You are free to use, modify, and distribute this software for personal learning, testing and demo purposes.
-
----
-
-## 👤 Author
-
-**Sandi Utomo**  
-[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sandiutomo/) 
-[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sandiutomo)
+[![Sandi Utomo](https://img.shields.io/badge/Made%20by-Sandi%20Utomo%20😎-5A6AE8?style=flat-square&logo=github&logoColor=white)](https://github.com/sandiutomo)
+[![Sandi Utomo](https://img.shields.io/badge/LinkedIn-Sandi%20Utomo-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sandiutomo/)
